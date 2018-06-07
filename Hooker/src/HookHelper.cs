@@ -120,10 +120,7 @@ namespace Hooker
 			string gameLibFolder = knowledgeBase.LibraryPath;
 
 			// List of all assemblies to copy to the game library folder.
-			IEnumerable<string> assembliesToCopy = new List<string>(ReferencedLibraryPaths)
-			{
-				_options.HooksRegistryFilePath
-			};
+			IEnumerable<string> assembliesToCopy = new List<string>(ReferencedLibraryPaths);
 			// Only keep unique entries.
 			assembliesToCopy = assembliesToCopy.Distinct();
 
@@ -170,6 +167,10 @@ namespace Hooker
 						Program.Log.Warn("FAIL Error copying `{0}`. Manual copy is needed!", libFileName);
 					}
 				}
+				Program.Log.Info("Copying `{0}`", _options.HooksRegistryFilePath);
+				string regFileName = Path.GetFileName(_options.HooksRegistryFilePath);
+				string targetRegPath = Path.Combine(gameLibFolder, regFileName);
+				File.Copy(_options.HooksRegistryFilePath, targetRegPath, true);
 			}
 		}
 
