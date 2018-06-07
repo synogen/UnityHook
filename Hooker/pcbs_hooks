@@ -23,8 +23,4 @@
 
 // Hooks the mono system layer to Tee network data.
 // The socket methods have multiple versions with different parameters!
-System.Net.Security.SslStream::EndWrite
-System.Net.Security.SslStream::EndRead
-
-System.Net.Sockets.Socket::EndSend
-System.Net.Sockets.Socket::EndReceive
+Job::GetBody

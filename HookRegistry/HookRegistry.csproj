@@ -62,9 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\HookRegistry.cs" />
-    <Compile Include="src\archived\IncomingPackets.cs" />
-    <Compile Include="src\archived\OutgoingPackets.cs" />
-    <Compile Include="src\hooks\HookTemplate.cs" />
+    <Compile Include="src\hooks\ShowCustomerSpecsHook.cs" />
     <Compile Include="src\ReferenceLoader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
